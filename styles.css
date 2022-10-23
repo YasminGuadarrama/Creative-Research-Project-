@@ -1,0 +1,42 @@
+story >  # style.css > 
+
+h1 {
+color: black;
+font-family: sams-serif;
+text-align: center;
+font-size: 22px;
+/*style="border:2px solid dodgerBlue;"*/
+
+
+}
+h2{
+	color: black; 
+  text-align: center;
+  font-size: 20px;
+
+
+}
+ p{
+color: rgb(0); 
+font-family: Impact;
+font-size: 20px;
+
+
+ }
+
+
+body {
+  font-family:'Arial Narrow Bold';
+  background-color: ghostwhite;
+  ont-size: 15px;
+  text-align: left;
+
+}
+
+a{
+color: rgb(20,50,100); 
+font-family: Impact;
+font-size: 20px;
+text-align: center;
+
+}
