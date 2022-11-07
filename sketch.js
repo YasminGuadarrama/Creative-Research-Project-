@@ -1,3 +1,7 @@
+//Variables declared
+let countries = ['Australia', 'Luxembourg', 'Monaco', 'Ireland', 'France', 'United Kingdom', 'Netherlands', 'Belgium', 
+'Germany', 'San Marino', 'Canada', 'South Korea', 'Israel', 'Japan', 'Spain', 'United States',
+ 'Andorra', 'Slovenia', 'Taiwan', 'New Zealand'];
 let count = 1; 
 let Australia = 14.54;
 let Luxembourg = 13.67;
@@ -22,9 +26,9 @@ let Taiwan = 5.26;
 
 function format(){ //Function used as the first format which uses rectangles to allow the setup to change based on which section is clicked 
   background(50,80,150); // Background is blue
-  textSize(18); // TextSize is 22
+  textSize(20); // TextSize is 22
   fill(255); // White fill for text
-  text('Top 20 Countries with the highest minimum wage in 2020 (US$):', 40, 60); // Text informing user
+  text('Top 20 Countries with the highest minimum wage in 2020 (US$):', 5, 60); // Text informing user
   noFill(); // No fill to not fill in rectangles white
   textSize(12); // Changing size to 12
   strokeWeight(2); // strokeWeight for rectangles
@@ -52,45 +56,48 @@ function format(){ //Function used as the first format which uses rectangles to 
   
   
   fill(255); // White fill for Text
-  text('Australia', 30, 130); // 1st colum and 1st row
-  text('Luxembourg',30, 230); // 1st colum and 2nd row
-  text('Monaco',30, 330); // 1st colum and 3rd row
-  text('Ireland',170, 130); // 2nd colum and 1st row
-  text('France',170, 230); // 2nd colum and 2nd row
-  text('United Kingdom',160, 330); // 2nd colum and 3rd row
-  text('Netherlands', 30, 430); // 1st colum and 4th row
-  text('Belgium',30, 530); // 1st colum and 5th row
-  text('Germany',160, 430); // 2nd colum and 4th row
-  text('San Marino',170, 530); // 2nd colum and 5th row
-  text('Canada',320, 130); // 3rd colum and 1st row
-  text('South Korea',320, 230); // 3rd colum and 2nd row
-  text('Israel', 320, 330); // 3rd colum and 3rd row
-  text('Japan',320, 430); // 3rd colum and 4th row
-  text('Spain',320, 530); // 3rd colum and 5th row
-  text('United States',460, 130); // 4th colum and 1st row
-  text('Andorra',460, 230); // 4th colum and 2nd row
-  text('Slovenia',460, 330); // 4th colum and 3rd row
-  text('Taiwan',460, 430); // 4th colum and 4th row
-  text('New Zealand',460, 530); // 4th colum and 5th row
+  text(countries[0], 30, 130); // 1st colum and 1st row
+  text(countries[1],30, 230); // 1st colum and 2nd row
+  text(countries[2],30, 330); // 1st colum and 3rd row
+  text(countries[3],170, 130); // 2nd colum and 1st row
+  text(countries[4],170, 230); // 2nd colum and 2nd row
+  text(countries[5],160, 330); // 2nd colum and 3rd row
+  text(countries[6], 30, 430); // 1st colum and 4th row
+  text(countries[7],30, 530); // 1st colum and 5th row
+  text(countries[8],160, 430); // 2nd colum and 4th row
+  text(countries[9],170, 530); // 2nd colum and 5th row
+  text(countries[10],320, 130); // 3rd colum and 1st row
+  text(countries[11],320, 230); // 3rd colum and 2nd row
+  text(countries[12], 320, 330); // 3rd colum and 3rd row
+  text(countries[13],320, 430); // 3rd colum and 4th row
+  text(countries[14],320, 530); // 3rd colum and 5th row
+  text(countries[15],460, 130); // 4th colum and 1st row
+  text(countries[16],460, 230); // 4th colum and 2nd row
+  text(countries[17],460, 330); // 4th colum and 3rd row
+  text(countries[18],460, 430); // 4th colum and 4th row
+  text(countries[19],460, 530); // 4th colum and 5th row
   text('Click here to compare the wages',190, 640);
   } // End of function
 
+//Function used to increase counter which updated the wages per click
 function mousePressed() {
   if(mouseIsPressed && mouseX < 390 && mouseX > 180 && mouseY < 720 && mouseY > 590){
-    count ++;
+    count++;
     //190,640 location
     //200,80 sizing
  }
+
 }
 
 
 function setup() {
   createCanvas(windowHeight, windowWidth);
-  
+
 }
 
 function draw() {
-  format();
+  format(); //Calling function format
+  //Multiplying the wages of each country which the number of time the button has been clicked
   text(int(Australia * count), 30, 145);
   text(int(Luxembourg * count), 30, 245);
   text(int(Monaco * count), 30, 345);
@@ -111,5 +118,16 @@ function draw() {
   text(int(Slovenia * count), 460, 345);
   text(int(Taiwan * count), 460, 445);
   text(int(New_Zealand * count), 460, 545);
+  //For loop used to keep track of clicks visually
+  for(var i = 0; i < count; i++){
+    text("Times Clicked: " + count,70, 640);
+  }
 
 }
+
+//Resources for Data 
+//https://worldpopulationreview.com/country-rankings/minimum-wage-by-country
+//https://www.commonwealthfund.org/publications/fund-reports/2021/aug/mirror-mirror-2021-reflecting-poorly
+//https://datalab.usaspending.gov/americas-finance-guide/debt/country-comparison/
+//https://www.cfr.org/backgrounder/national-debt-dilemma
+
